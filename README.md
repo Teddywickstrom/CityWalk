@@ -33,7 +33,11 @@
 
 456 mathias
 
+<<<<<<< HEAD
 jde
 
 
-Nu ska vi se
+
+=======
+jde uwghedkhskeb
+>>>>>>> origin/master
