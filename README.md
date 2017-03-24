@@ -1,6 +1,5 @@
-# CityWalk
-# Mathias testar GitHub
-# test 2 mathias
+
+<<<<<<< HEAD
 #test markus
 
 
@@ -41,3 +40,12 @@ jde
 =======
 jde uwghedkhskeb
 >>>>>>> origin/master
+=======
+<<<<<<< HEAD
+
+
+Jag heter Markus
+
+
+>>>>>>> refs/remotes/origin/master
+>>>>>>> origin/reamed-edit
