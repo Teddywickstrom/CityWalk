@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 Park = require('./models/park');
 City = require('./models/city');
 
-//Connect to mongoose
+//Connect to mongoose yo
 mongoose.connect('mongodb://masj:Mint.js1337@ds050539.mlab.com:50539/citywalks');
 var db = mongoose.connection;
 
