@@ -40,7 +40,7 @@ app.post('/api/cities', function(req, res){
 });
 
 app.get('/api/users', function(req, res){
-    User.getCities(function(err, users){
+    User.getUsers(function(err, users){
         if(err){
             throw err;
         }
@@ -51,6 +51,17 @@ app.get('/api/users', function(req, res){
 
 app.get('/api/users/:_id', function(req, res){
     User.getUserById(req.params._id, function(err, user){
+        if(err){
+            throw err;
+        }
+        res.json(user);
+    });
+    
+});
+
+app.post('/api/users', function(req, res){
+    var user = req.body;
+    User.addUser(city, function(err, user){
         if(err){
             throw err;
         }
