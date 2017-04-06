@@ -2,7 +2,15 @@ var mongoose = require('mongoose');
 
 //Users schema
 var userSchema = mongoose.Schema({
-    name:{
+    username:{
+        type: String,
+        required: true
+    },
+    email:{
+        type: String,
+        required: true
+    },
+    password:{
         type: String,
         required: true
     },
@@ -12,14 +20,19 @@ var userSchema = mongoose.Schema({
     }
 });
 
-var Users = module.exports = mongoose.model('User', citySchema);
+var User = module.exports = mongoose.model('User', userSchema);
 
-//Get Cities
-module.exports.getCities = function(callback, limit){
-    City.find(callback).limit(limit);
+//Get Users
+module.exports.getUsers = function(callback, limit){
+    User.find(callback).limit(limit);
 }
 
-//Add City
-module.exports.addCity = function(city, callback){
-    City.create(city, callback);
+//Add User
+module.exports.addUser = function(user, callback){
+    User.create(user, callback);
+}
+
+//Get User by ID
+module.exports.getUserById = function(id, callback){
+    User.findById(id, callback);
 }
