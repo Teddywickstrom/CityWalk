@@ -1,16 +1,17 @@
+//Connects to the database
 var mongoose = require('mongoose');
 
-//Users schema
+//Defines the Users schema
 var userSchema = mongoose.Schema({
     username:{
         type: String,
         required: true
     },
     email:{
-        type: String,
+        type: String
     },
     password:{
-        type: String,
+        type: String
     },
     create_date:{
         type: Date,
@@ -18,6 +19,7 @@ var userSchema = mongoose.Schema({
     }
 });
 
+//Exports the User variabel and user schema
 var User = module.exports = mongoose.model('User', userSchema);
 
 //Get Users

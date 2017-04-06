@@ -1,6 +1,7 @@
+//Connects to the database
 var mongoose = require('mongoose');
 
-//Park schema
+//Defines the Park schema
 var parkSchema = mongoose.Schema({
     name:{
         type: String,
@@ -19,6 +20,7 @@ var parkSchema = mongoose.Schema({
     }
 });
 
+//Exports the Park variabel and park schema
 var Park = module.exports = mongoose.model('Park', parkSchema);
 
 //Get Parks

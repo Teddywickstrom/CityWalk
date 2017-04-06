@@ -1,6 +1,7 @@
+//Connects to the database
 var mongoose = require('mongoose');
 
-//City schema
+//Defines the City schema
 var citySchema = mongoose.Schema({
     name:{
         type: String,
@@ -12,6 +13,7 @@ var citySchema = mongoose.Schema({
     }
 });
 
+//Exports the City variabel and city schema
 var City = module.exports = mongoose.model('City', citySchema);
 
 //Get Cities
