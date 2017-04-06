@@ -19,14 +19,6 @@ var parkSchema = mongoose.Schema({
     }
 });
 
-var Park = module.exports = mongoose.model('Park', parkSchema);
+const Model = mongoose.model('Park', parkSchema);
 
-//Get Parks
-module.exports.getParks = function(callback, limit){
-    Park.find(callback).limit(limit);
-}
-
-//Get Park
-module.exports.getParkById = function(id, callback){
-    Park.findById(id, callback);
-}
+module.exports = Model;

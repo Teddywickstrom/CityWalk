@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Users schema
-var userSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -16,14 +16,6 @@ var userSchema = mongoose.Schema({
     
 });
 
-var Users = module.exports = mongoose.model('User', userSchema);
+const Model = mongoose.model('User', UserSchema);
 
-//Get Users
-module.exports.getUsers = function(callback, limit){
-    User.find(callback).limit(limit);
-}
-
-//Add User
-module.exports.addUser = function(user, callback){
-    User.create(user, callback);
-}
+module.exports = Model;

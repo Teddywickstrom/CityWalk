@@ -14,11 +14,10 @@ const service = require('feathers-mongoose');
 // See http://mongoosejs.com/docs/promises.html
 mongoose.Promise = global.Promise;
 
-const Model = require('./models/messages');
-//app.use(bodyParser.json());
-
- Park = require('./models/park');
+const Message = require('./models/messages');
+const Park = require('./models/park');
 const City = require('./models/city');
+const User = require('./models/users');
 
 //Connect to mongoose
 mongoose.connect('mongodb://masj:Mint.js1337@ds050539.mlab.com:50539/citywalks');
@@ -36,7 +35,7 @@ const app = feathers()
 // Connect to the db, create and register a Feathers service.
 
 app.use('/api/messages', service({
-  Model,
+  Model: Message,
   lean: true, // set to false if you want Mongoose documents returned
   paginate: {
     default: 7,
@@ -45,63 +44,33 @@ app.use('/api/messages', service({
 }));
 
 
-/*
+
 app.use('/api/cities', service({
-  City,
+  Model: City,
   lean: true, // set to false if you want Mongoose documents returned
   paginate: {
-    default: 2,
-    max: 4
+    default: 7,
+    max: 10
   }
 }));
 
+app.use('/api/users', service({
+  Model: User,
+  lean: true, // set to false if you want Mongoose documents returned
+  paginate: {
+    default: 7,
+    max: 10
+  }
+}));
 
-app.get('/', function(req, res){
-    res.send('Please use /api/cities or /api/parks');
-});
-
-app.get('/api/cities', function(req, res){
-    City.getCities(function(err, cities){
-        if(err){
-            throw err;
-        }
-        res.json(cities);
-    });
-    
-});
-
-app.post('/api/cities', function(req, res){
-    var city = req.body;
-    City.addCity(city, function(err, city){
-        if(err){
-            throw err;
-        }
-        res.json(city);
-    });
-    
-});
-
-app.get('/api/parks/:_id', function(req, res){
-    Park.getParkById(req.params._id, function(err, park){
-        if(err){
-            throw err;
-        }
-        res.json(park);
-    });
-    
-});
-
-app.get('/api/parks', function(req, res){
-    Park.getParks(function(err, parks){
-        if(err){
-            throw err;
-        }
-        res.json(parks);
-    });
-    
-});
-*/
-
+app.use('/api/park', service({
+  Model: Park,
+  lean: true, // set to false if you want Mongoose documents returned
+  paginate: {
+    default: 7,
+    max: 10
+  }
+}));
 
 app.listen(3000);
 console.log('Running on port 3000...');

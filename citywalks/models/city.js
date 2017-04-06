@@ -12,8 +12,9 @@ var citySchema = mongoose.Schema({
     }
 });
 
-var City = module.exports = mongoose.model('City', citySchema);
-
+const Model = mongoose.model('City', citySchema);
+module.exports = Model;
+/*
 //Get Cities
 module.exports.getCities = function(callback, limit){
     City.find(callback).limit(limit);
@@ -23,3 +24,4 @@ module.exports.getCities = function(callback, limit){
 module.exports.addCity = function(city, callback){
     City.create(city, callback);
 }
+*/
