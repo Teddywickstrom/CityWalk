@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 Park = require('./models/park');
 City = require('./models/city');
+User = require('./models/user');
 
 //Connect to mongoose
 mongoose.connect('mongodb://masj:Mint.js1337@ds050539.mlab.com:50539/citywalks');
@@ -38,12 +39,33 @@ app.post('/api/cities', function(req, res){
     
 });
 
-app.get('/api/parks/:_id', function(req, res){
-    Park.getParkById(req.params._id, function(err, park){
+app.get('/api/users', function(req, res){
+    User.getUsers(function(err, users){
         if(err){
             throw err;
         }
-        res.json(park);
+        res.json(users);
+    });
+    
+});
+
+app.get('/api/users/:_id', function(req, res){
+    User.getUserById(req.params._id, function(err, user){
+        if(err){
+            throw err;
+        }
+        res.json(user);
+    });
+    
+});
+
+app.post('/api/users', function(req, res){
+    var user = req.body;
+    User.addUser(city, function(err, user){
+        if(err){
+            throw err;
+        }
+        res.json(user);
     });
     
 });
@@ -58,6 +80,15 @@ app.get('/api/parks', function(req, res){
     
 });
 
+app.get('/api/parks/:_id', function(req, res){
+    Park.getParkById(req.params._id, function(err, park){
+        if(err){
+            throw err;
+        }
+        res.json(park);
+    });
+    
+});
 
 app.listen(3000);
 console.log('Running on port 3000...');
