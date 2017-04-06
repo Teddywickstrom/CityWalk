@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-
+//HEJ
 app.use(bodyParser.json());
 
 Park = require('./models/park');
