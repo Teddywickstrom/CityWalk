@@ -1,8 +1,10 @@
+//Connect to programs
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+//handle json script
 app.use(bodyParser.json());
 
 Park = require('./models/park');
@@ -17,6 +19,7 @@ app.get('/', function(req, res){
     res.send('Please use /api/cities or /api/parks');
 });
 
+//Get function for city
 app.get('/api/cities', function(req, res){
     City.getCities(function(err, cities){
         if(err){
@@ -27,6 +30,7 @@ app.get('/api/cities', function(req, res){
     
 });
 
+//Post function for city
 app.post('/api/cities', function(req, res){
     var city = req.body;
     City.addCity(city, function(err, city){
@@ -38,6 +42,7 @@ app.post('/api/cities', function(req, res){
     
 });
 
+//Get function for users
 app.get('/api/users', function(req, res){
     User.getUsers(function(err, users){
         if(err){
@@ -48,6 +53,7 @@ app.get('/api/users', function(req, res){
     
 });
 
+//Get function for one user by using ID
 app.get('/api/users/:_id', function(req, res){
     User.getUserById(req.params._id, function(err, user){
         if(err){
@@ -58,6 +64,7 @@ app.get('/api/users/:_id', function(req, res){
     
 });
 
+//Post users
 app.post('/api/users', function(req, res){
     var user = req.body;
     User.addUser(user, function(err, user){
@@ -69,6 +76,7 @@ app.post('/api/users', function(req, res){
     
 });
 
+//Get function for park
 app.get('/api/parks', function(req, res){
     Park.getParks(function(err, parks){
         if(err){
@@ -79,6 +87,7 @@ app.get('/api/parks', function(req, res){
     
 });
 
+//Get function for one park by using ID
 app.get('/api/parks/:_id', function(req, res){
     Park.getParkById(req.params._id, function(err, park){
         if(err){
@@ -89,5 +98,6 @@ app.get('/api/parks/:_id', function(req, res){
     
 });
 
+//port listening
 app.listen(3000);
 console.log('Running on port 3000...');
