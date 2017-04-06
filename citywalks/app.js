@@ -43,8 +43,6 @@ app.use('/api/messages', service({
   }
 }));
 
-
-
 app.use('/api/cities', service({
   Model: City,
   lean: true, // set to false if you want Mongoose documents returned
@@ -63,7 +61,7 @@ app.use('/api/users', service({
   }
 }));
 
-app.use('/api/park', service({
+app.use('/api/parks', service({
   Model: Park,
   lean: true, // set to false if you want Mongoose documents returned
   paginate: {
