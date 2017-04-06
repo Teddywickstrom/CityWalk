@@ -9,7 +9,11 @@
     "dependencies":{
         "express":"*",
         "body-parser":"*",
-        "mongoose":"*"
+        "mongoose":"*",
+        "feathers":"*", 
+        "feathers-rest":"*", 
+        "body-parser":"*",
+        "feathers-mongoose":"*"
     },
   "author": "Malin Sjöberg",
   "license": "ISC"

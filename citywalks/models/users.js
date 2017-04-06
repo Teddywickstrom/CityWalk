@@ -6,20 +6,24 @@ var userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    create_date:{
+    register_date:{
         type: Date,
         default: Date.now
+    },
+    email:{
+        type: String
     }
+    
 });
 
-var Users = module.exports = mongoose.model('User', citySchema);
+var Users = module.exports = mongoose.model('User', userSchema);
 
-//Get Cities
-module.exports.getCities = function(callback, limit){
-    City.find(callback).limit(limit);
+//Get Users
+module.exports.getUsers = function(callback, limit){
+    User.find(callback).limit(limit);
 }
 
-//Add City
-module.exports.addCity = function(city, callback){
-    City.create(city, callback);
+//Add User
+module.exports.addUser = function(user, callback){
+    User.create(user, callback);
 }
