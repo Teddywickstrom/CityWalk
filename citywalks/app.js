@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-//HEJ
 app.use(bodyParser.json());
 
 Park = require('./models/park');
@@ -61,7 +60,7 @@ app.get('/api/users/:_id', function(req, res){
 
 app.post('/api/users', function(req, res){
     var user = req.body;
-    User.addUser(city, function(err, user){
+    User.addUser(user, function(err, user){
         if(err){
             throw err;
         }

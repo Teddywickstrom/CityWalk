@@ -8,11 +8,9 @@ var userSchema = mongoose.Schema({
     },
     email:{
         type: String,
-        required: true
     },
     password:{
         type: String,
-        required: true
     },
     create_date:{
         type: Date,
