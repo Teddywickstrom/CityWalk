@@ -15,7 +15,7 @@ const service = require('feathers-mongoose');
 mongoose.Promise = global.Promise;
 
 const Message = require('./models/messages');
-const Park = require('./models/park');
+const Attraction = require('./models/attraction');
 const City = require('./models/city');
 const User = require('./models/users');
 
@@ -61,8 +61,8 @@ app.use('/api/users', service({
   }
 }));
 
-app.use('/api/parks', service({
-  Model: Park,
+app.use('/api/attractions', service({
+  Model: Attraction,
   lean: true, // set to false if you want Mongoose documents returned
   paginate: {
     default: 7,

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Park schema
-var parkSchema = mongoose.Schema({
+var attractionSchema = mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -19,6 +19,6 @@ var parkSchema = mongoose.Schema({
     }
 });
 
-const Model = mongoose.model('Park', parkSchema);
+const Model = mongoose.model('Attraction', attractionSchema);
 
 module.exports = Model;
