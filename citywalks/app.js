@@ -1,9 +1,3 @@
-//var express = require('express');
-//var app = express();
-//var bodyParser = require('body-parser');
-//var mongoose = require('mongoose');
-//var crud = require('./CRUD/crud.js') //Testade nya CRUD func
-
 const feathers = require('feathers');
 const rest = require('feathers-rest');
 const bodyParser = require('body-parser');
