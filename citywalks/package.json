@@ -6,15 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "dependencies":{
-        "express":"*",
-        "body-parser":"*",
-        "mongoose":"*",
-        "feathers":"*", 
-        "feathers-rest":"*", 
-        "body-parser":"*",
-        "feathers-mongoose":"*"
-    },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "feathers": "*",
+    "feathers-authentication": "^1.2.1",
+    "feathers-mongoose": "*",
+    "feathers-rest": "*",
+    "mongoose": "*"
+  },
   "author": "Malin Sjöberg",
   "license": "ISC"
 }
