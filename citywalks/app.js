@@ -3,7 +3,7 @@ const rest = require('feathers-rest');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const service = require('feathers-mongoose');
-const express = require('express');           //Add express
+const express = require('express');//Add express
 
 // Tell mongoose to use native promises
 // See http://mongoosejs.com/docs/promises.html
