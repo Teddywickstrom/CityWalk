@@ -12,7 +12,8 @@ mongoose.Promise = global.Promise;
 const Message = require('./models/messages');
 const Attraction = require('./models/attraction');
 const City = require('./models/city');
-const User = require('./models/users');    
+const User = require('./models/users');
+const Routes = require('./models/routes')
 
 //Connect to mongoose
 mongoose.connect('mongodb://masj:Mint.js1337@ds050539.mlab.com:50539/citywalks');
@@ -36,37 +37,30 @@ app.use(express.static(__dirname + '/public'))
 app.use('/api/messages', service({
   Model: Message,
   lean: true, // set to false if you want Mongoose documents returned
-  paginate: {
-    default: 7,
-    max: 10
-  }
 }));
 
 app.use('/api/cities', service({
   Model: City,
   lean: true, // set to false if you want Mongoose documents returned
-  paginate: {
-    default: 7,
-    max: 10
-  }
+
+}));
+
+app.use('/api/routes', service({
+  Model: Routes,
+  lean: true, // set to false if you want Mongoose documents returned
+
 }));
 
 app.use('/api/users', service({
   Model: User,
   lean: true, // set to false if you want Mongoose documents returned
-  paginate: {
-    default: 7,
-    max: 10
-  }
+
 }));
 
 app.use('/api/attractions', service({
   Model: Attraction,
   lean: true, // set to false if you want Mongoose documents returned
-  paginate: {
-    default: 7,
-    max: 10
-  }
+
 }));
 
 //Listen on PORT defined above

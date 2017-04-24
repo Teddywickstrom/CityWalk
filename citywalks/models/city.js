@@ -14,14 +14,3 @@ var citySchema = mongoose.Schema({
 
 const Model = mongoose.model('City', citySchema);
 module.exports = Model;
-/*
-//Get Cities
-module.exports.getCities = function(callback, limit){
-    City.find(callback).limit(limit);
-}
-
-//Add City
-module.exports.addCity = function(city, callback){
-    City.create(city, callback);
-}
-*/
