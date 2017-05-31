@@ -11,4 +11,4 @@ How to start the API:
 
   npm start
   
-   This version is working but has been discarded for the newer Feathers.js generated app called Feathers-API
+   This version is working but has been discarded for the newer Feathers.js generated app called Feathers-API and git name : GIT-api
